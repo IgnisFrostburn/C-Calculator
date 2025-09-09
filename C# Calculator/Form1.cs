@@ -92,7 +92,9 @@ namespace C__Calculator
                     }
                     else
                     {
-                        //performOperation();
+                        char op = operation;
+                        performOperation();
+                        operation = op;
                         result.Append(current.ToString() + " " + operation);
                         prev_TB.Text = result.ToString();
                     }
