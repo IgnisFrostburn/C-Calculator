@@ -48,27 +48,7 @@ namespace C__Calculator
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            try
-            {   
-                string calculation = result.ToString() + current.ToString();
-                var result_value = new System.Data.DataTable().Compute(calculation, null);
-                int calculation_result = Convert.ToInt32(result_value);
-                result.Clear();
-                result.Append(calculation_result);
-                current.Clear();
-                operation = 'z';
-                result_TB.Text = result.ToString();
-                prev_TB.Text = "0";
-                Console.WriteLine(calculation_result);
-            } catch(Exception exc)
-            {
-                //MessageBox.Show("Invalid input, please enter a valid number.");
-                result_TB.Text = "Syntax Error";
-                result.Clear();
-                current.Clear();
-            }
-
-
+            performOperation();
         }
 
         private void numberButtonClicked(object sender, EventArgs e)
@@ -96,6 +76,7 @@ namespace C__Calculator
                 operation = clickedButton.Text[0];
                 if (result.Length > 0)
                 {
+                    // change operation
                     if (!Char.IsLetter(result[result.Length - 1]) && lastButtonClickedIsOpButton)
                     {
                         try
@@ -111,9 +92,9 @@ namespace C__Calculator
                     }
                     else
                     {
+                        //performOperation();
                         result.Append(current.ToString() + " " + operation);
                         prev_TB.Text = result.ToString();
-                        //doOperation();
                     }
                 }
                 else
@@ -127,8 +108,9 @@ namespace C__Calculator
             }
         }
 
-        private void doOperation()
+        private void performOperation()
         {
+            
             try
             {
                 string calculation = result.ToString() + current.ToString();
