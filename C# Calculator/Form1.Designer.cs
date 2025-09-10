@@ -47,6 +47,7 @@
             this.prev_TB = new System.Windows.Forms.TextBox();
             this.buttonBackspace = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonDecimal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // result_TB
@@ -157,7 +158,7 @@
             // button0
             // 
             this.button0.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button0.Location = new System.Drawing.Point(12, 371);
+            this.button0.Location = new System.Drawing.Point(78, 371);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(60, 60);
             this.button0.TabIndex = 10;
@@ -169,9 +170,9 @@
             this.buttonEquals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonEquals.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEquals.ForeColor = System.Drawing.Color.White;
-            this.buttonEquals.Location = new System.Drawing.Point(78, 371);
+            this.buttonEquals.Location = new System.Drawing.Point(144, 371);
             this.buttonEquals.Name = "buttonEquals";
-            this.buttonEquals.Size = new System.Drawing.Size(126, 60);
+            this.buttonEquals.Size = new System.Drawing.Size(60, 60);
             this.buttonEquals.TabIndex = 11;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = false;
@@ -258,12 +259,23 @@
             this.buttonClear.UseVisualStyleBackColor = false;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // buttonDecimal
+            // 
+            this.buttonDecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDecimal.Location = new System.Drawing.Point(12, 371);
+            this.buttonDecimal.Name = "buttonDecimal";
+            this.buttonDecimal.Size = new System.Drawing.Size(60, 60);
+            this.buttonDecimal.TabIndex = 20;
+            this.buttonDecimal.Text = ".";
+            this.buttonDecimal.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(349, 453);
+            this.Controls.Add(this.buttonDecimal);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonBackspace);
             this.Controls.Add(this.buttonDivide);
@@ -312,6 +324,7 @@
         private System.Windows.Forms.TextBox prev_TB;
         private System.Windows.Forms.Button buttonBackspace;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonDecimal;
     }
 }
 

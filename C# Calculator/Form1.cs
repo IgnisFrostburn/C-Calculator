@@ -30,6 +30,7 @@ namespace C__Calculator
             button8.Click += numberButtonClicked;
             button9.Click += numberButtonClicked;
             button0.Click += numberButtonClicked;
+            buttonDecimal.Click += numberButtonClicked;
             buttonPlus.Click += operationButtonClicked;
             buttonMinus.Click += operationButtonClicked;
             buttonMultiply.Click += operationButtonClicked;
@@ -117,9 +118,10 @@ namespace C__Calculator
             {
                 string calculation = result.ToString() + current.ToString();
                 var result_value = new System.Data.DataTable().Compute(calculation, null);
-                int calculation_result = Convert.ToInt32(result_value);
+                double calculation_result = Convert.ToDouble(result_value);
+                string res = calculation_result.ToString("G6");
                 result.Clear();
-                result.Append(calculation_result);
+                result.Append(res);
                 current.Clear();
                 operation = 'z';
                 result_TB.Text = result.ToString();
